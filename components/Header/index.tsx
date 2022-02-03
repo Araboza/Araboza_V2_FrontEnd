@@ -15,6 +15,7 @@ function Header({ title, description }: HeaderProps) {
           description ? description : "포트폴리오를 공유 및 관리하는 사이트"
         }
       />
+      <meta property="og:type" content="website" />
       <meta property="og:title" content="Araboza" />
       <meta property="og:url" content={process.env.FRONT_SERVER_URL} />
       <meta property="og:image" content="https://bit.ly/3okIbxu" />
@@ -24,6 +25,7 @@ function Header({ title, description }: HeaderProps) {
           description ? description : "포트폴리오를 공유 및 관리하는 사이트"
         }
       />
+      <meta name="twitter:card" content="summary" />
       <meta property="twitter:title" content="Araboza" />
       <meta property="twitter:url" content={process.env.FRONT_SERVER_URL} />
       <meta property="twitter:image" content="https://bit.ly/3okIbxu" />
