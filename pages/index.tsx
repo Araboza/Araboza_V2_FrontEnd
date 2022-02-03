@@ -1,16 +1,10 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+import Header from "../components/Header";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>Araboza</title>
-        <meta
-          name="description"
-          content="This is a site for sharing and managing portfolios"
-        />
-      </Head>
+      <Header title="Araboza" />
     </div>
   );
 };
