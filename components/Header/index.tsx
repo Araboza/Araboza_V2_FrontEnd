@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/link-passhref */
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { MdNotificationsNone } from "react-icons/md";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import * as S from "./styles";
 import * as SVG from "../../SVG";
 
 function Header() {
   const router = useRouter();
-  console.log(router.route);
+
   return (
     <S.HeaderWrapper>
       <S.HeaderSize>
@@ -24,7 +24,7 @@ function Header() {
           </Link>
         </S.Navbar>
         <S.Status>
-          <MdNotificationsNone size="2rem" />
+          <IoMdNotificationsOutline size="1.7rem" />
           <S.UserImg src="https://bit.ly/3sivFA3" />
         </S.Status>
       </S.HeaderSize>

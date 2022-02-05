@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 
 export const HeaderWrapper = styled.header`
   height: 4rem;
+  width: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
 `;
 
 export const HeaderSize = styled.div`
@@ -40,12 +42,18 @@ export const NavLink = styled.a`
   width: 5rem;
   cursor: pointer;
   transition: 0.2s;
+  color: rgba(0, 0, 0, 0.5);
   ${(props: { isBottom: boolean }) =>
     props.isBottom &&
     `border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    color: #000;
     :hover {
       border-bottom: 1px solid #000;
-    }`}
+    }`};
+
+  :hover {
+    color: #000;
+  }
 `;
 
 export const Status = styled.div`
