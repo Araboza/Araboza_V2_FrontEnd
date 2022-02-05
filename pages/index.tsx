@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import Header from "../components/Header";
+import SEO from "../components/SEO";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Header title="Araboza" />
+      <SEO title="Araboza" />
+      <Header />
     </div>
   );
 };

@@ -1,41 +1,34 @@
-import Head from "next/head";
+/* eslint-disable @next/next/link-passhref */
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { MdNotificationsNone } from "react-icons/md";
+import * as S from "./styles";
+import * as SVG from "../../SVG";
 
-interface HeaderProps {
-  title: string;
-  description?: string;
-}
-
-function Header({ title, description }: HeaderProps) {
+function Header() {
+  const router = useRouter();
+  console.log(router.route);
   return (
-    <Head>
-      <title>{title}</title>
-      <meta
-        name="description"
-        content={
-          description ? description : "포트폴리오를 공유 및 관리하는 사이트"
-        }
-      />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Araboza" />
-      <meta property="og:url" content={process.env.FRONT_SERVER_URL} />
-      <meta property="og:image" content="https://bit.ly/3okIbxu" />
-      <meta
-        property="og:description"
-        content={
-          description ? description : "포트폴리오를 공유 및 관리하는 사이트"
-        }
-      />
-      <meta name="twitter:card" content="summary" />
-      <meta property="twitter:title" content="Araboza" />
-      <meta property="twitter:url" content={process.env.FRONT_SERVER_URL} />
-      <meta property="twitter:image" content="https://bit.ly/3okIbxu" />
-      <meta
-        property="twitter:description"
-        content={
-          description ? description : "포트폴리오를 공유 및 관리하는 사이트"
-        }
-      />
-    </Head>
+    <S.HeaderWrapper>
+      <S.HeaderSize>
+        <SVG.Logo />
+        <S.Navbar>
+          <Link href="/">
+            <S.NavLink isBottom={router.route === "/"}>Home</S.NavLink>
+          </Link>
+          <Link href="/upload">
+            <S.NavLink isBottom={router.route === "/upload"}>Upload</S.NavLink>
+          </Link>
+          <Link href="/my">
+            <S.NavLink isBottom={router.route === "my"}>MyPage</S.NavLink>
+          </Link>
+        </S.Navbar>
+        <S.Status>
+          <MdNotificationsNone size="2rem" />
+          <S.UserImg src="https://bit.ly/3sivFA3" />
+        </S.Status>
+      </S.HeaderSize>
+    </S.HeaderWrapper>
   );
 }
 
