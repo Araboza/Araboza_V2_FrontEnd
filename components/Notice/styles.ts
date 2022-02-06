@@ -7,8 +7,8 @@ export const NoticeWrapper = styled.div`
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   padding: 10px;
-  margin-top: 150px;
-  right: 2rem;
+  margin-top: 120px;
+  right: 1rem;
 `;
 
 export const Title = styled.h3`
