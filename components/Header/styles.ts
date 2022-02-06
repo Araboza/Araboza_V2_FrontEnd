@@ -23,6 +23,13 @@ export const HeaderSize = styled.div`
   }
 `;
 
+export const Logo = styled.a`
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
 export const Navbar = styled.nav`
   display: flex;
   align-items: center;
@@ -63,9 +70,25 @@ export const Status = styled.div`
   gap: 2rem;
 `;
 
+export const Notice = styled.div`
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :hover {
+    background: #f1f1f1;
+  }
+`;
+
 export const UserImg = styled.img`
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 100%;
   object-fit: cover;
+  cursor: pointer;
 `;

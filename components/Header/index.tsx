@@ -11,7 +11,11 @@ function Header() {
   return (
     <S.HeaderWrapper>
       <S.HeaderSize>
-        <SVG.Logo />
+        <Link href="/">
+          <S.Logo>
+            <SVG.Logo />
+          </S.Logo>
+        </Link>
         <S.Navbar>
           <Link href="/">
             <S.NavLink isBottom={router.route === "/"}>Home</S.NavLink>
@@ -24,7 +28,9 @@ function Header() {
           </Link>
         </S.Navbar>
         <S.Status>
-          <IoMdNotificationsOutline size="1.7rem" />
+          <S.Notice>
+            <IoMdNotificationsOutline className="notice" size="1.7rem" />
+          </S.Notice>
           <S.UserImg src="https://bit.ly/3sivFA3" />
         </S.Status>
       </S.HeaderSize>
