@@ -70,6 +70,10 @@ export const Status = styled.div`
   gap: 2rem;
 `;
 
+export const NoticePosition = styled.div`
+  position: relative;
+`;
+
 export const Notice = styled.div`
   cursor: pointer;
   width: 2.5rem;
