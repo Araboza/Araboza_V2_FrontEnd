@@ -5,8 +5,15 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import * as S from "./styles";
 import * as SVG from "../../SVG";
 import Notice from "../Notice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../modules";
+import { isNotice } from "../../modules/notice";
 
 function Header() {
+  const { showNotice } = useSelector((state: RootState) => ({
+    showNotice: state.notice.showNotice,
+  }));
+  const dispatch = useDispatch();
   const router = useRouter();
 
   return (
@@ -29,12 +36,12 @@ function Header() {
           </Link>
         </S.Navbar>
         <S.Status>
-          <S.Notice>
+          <S.Notice onClick={() => dispatch(isNotice())}>
             <IoMdNotificationsOutline className="notice" size="1.7rem" />
           </S.Notice>
           <S.UserImg src="https://bit.ly/3sivFA3" />
         </S.Status>
-        <Notice />
+        {showNotice && <Notice />}
       </S.HeaderSize>
     </S.HeaderWrapper>
   );

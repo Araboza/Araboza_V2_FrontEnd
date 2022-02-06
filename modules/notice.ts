@@ -7,11 +7,11 @@ export const isNotice = () => ({
 type ActionsType = ReturnType<typeof isNotice>;
 
 interface StateType {
-  isNotice: boolean;
+  showNotice: boolean;
 }
 
 const initialState: StateType = {
-  isNotice: false,
+  showNotice: false,
 };
 
 export default function notice(
@@ -20,7 +20,7 @@ export default function notice(
 ): StateType {
   switch (action.type) {
     case IS_NOTICE:
-      return { ...state, isNotice: !state.isNotice };
+      return { ...state, showNotice: !state.showNotice };
     default:
       return state;
   }
