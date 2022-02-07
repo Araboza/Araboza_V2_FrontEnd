@@ -74,7 +74,7 @@ export const NoticePosition = styled.div`
   position: relative;
 `;
 
-export const Notice = styled.div`
+export const CircleBackground = styled.a`
   cursor: pointer;
   width: 2.5rem;
   height: 2.5rem;

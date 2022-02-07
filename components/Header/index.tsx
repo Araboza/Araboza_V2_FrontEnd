@@ -2,6 +2,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { BsGithub } from "react-icons/bs";
 import * as S from "./styles";
 import * as SVG from "../../SVG";
 import Notice from "../Notice";
@@ -36,9 +37,12 @@ function Header() {
           </Link>
         </S.Navbar>
         <S.Status>
-          <S.Notice onClick={() => dispatch(isNotice())}>
-            <IoMdNotificationsOutline className="notice" size="1.7rem" />
-          </S.Notice>
+          <S.CircleBackground as="div" onClick={() => dispatch(isNotice())}>
+            <IoMdNotificationsOutline size="1.7rem" />
+          </S.CircleBackground>
+          <S.CircleBackground target="_blank" href="https://github.com/Araboza">
+            <BsGithub size="1.7rem" />
+          </S.CircleBackground>
           <S.UserImg src="https://bit.ly/3sivFA3" />
         </S.Status>
         {showNotice && <Notice />}
