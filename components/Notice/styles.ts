@@ -9,9 +9,18 @@ export const NoticeWrapper = styled.div`
   padding: 10px;
   margin-top: 120px;
   right: 1rem;
+  z-index: 100;
 `;
 
 export const Title = styled.h3`
   text-align: center;
   margin-top: 0;
+`;
+
+export const Background = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 `;

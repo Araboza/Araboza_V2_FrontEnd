@@ -8,7 +8,7 @@ import * as SVG from "../../SVG";
 import Notice from "../Notice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../modules";
-import { isNotice } from "../../modules/notice";
+import { isCloseNotice, isNotice } from "../../modules/notice";
 
 function Header() {
   const { showNotice } = useSelector((state: RootState) => ({
@@ -16,6 +16,14 @@ function Header() {
   }));
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const onClick = () => {
+    if (showNotice) {
+      dispatch(isCloseNotice());
+      return;
+    }
+    dispatch(isNotice());
+  };
 
   return (
     <S.HeaderWrapper>
@@ -37,7 +45,7 @@ function Header() {
           </Link>
         </S.Navbar>
         <S.Status>
-          <S.CircleBackground as="div" onClick={() => dispatch(isNotice())}>
+          <S.CircleBackground as="div" onClick={onClick}>
             <IoMdNotificationsOutline size="1.7rem" />
           </S.CircleBackground>
           <S.CircleBackground target="_blank" href="https://github.com/Araboza">
