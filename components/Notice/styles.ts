@@ -7,7 +7,7 @@ export const NoticeWrapper = styled.div`
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   padding: 10px;
-  margin-top: 120px;
+  top: 3.7rem;
   right: 1rem;
   z-index: 100;
 `;

@@ -5,6 +5,7 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   position: fixed;
+  top: 0;
 `;
 
 export const HeaderSize = styled.div`
@@ -37,6 +38,7 @@ export const Navbar = styled.nav`
   gap: 2rem;
   font-size: 1.2rem;
   position: absolute;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
 `;
