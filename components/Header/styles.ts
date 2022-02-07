@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.header`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
+  background: #fff;
 `;
 
 export const HeaderSize = styled.div`

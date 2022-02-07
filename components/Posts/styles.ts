@@ -6,6 +6,18 @@ export const PostsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
+  @media (max-width: 1320px) {
+    width: 980px;
+  }
+
+  @media (max-width: 1000px) {
+    width: 650px;
+  }
+
+  @media (max-width: 680px) {
+    width: 80%;
+  }
 `;
 
 export const PostCardWrapper = styled.div`
@@ -14,6 +26,10 @@ export const PostCardWrapper = styled.div`
   flex-direction: column;
   border-radius: 10px;
   border: 1px solid #e8e8e8;
+
+  @media (max-width: 680px) {
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
