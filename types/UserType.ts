@@ -1,6 +1,7 @@
 export interface UserType {
-  id: number;
-  name: string;
   email: string;
+  nickname: string;
   img: string;
+  introduce: string;
+  major: Array<string>;
 }

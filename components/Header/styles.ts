@@ -7,6 +7,7 @@ export const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   background: #fff;
+  z-index: 99;
 `;
 
 export const HeaderSize = styled.div`

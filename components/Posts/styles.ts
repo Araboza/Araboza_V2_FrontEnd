@@ -87,6 +87,7 @@ export const LikeInfo = styled.div`
 
   svg {
     cursor: pointer;
+    ${(props: { liked: boolean }) => props.liked && "color: red;"}
   }
 `;
 

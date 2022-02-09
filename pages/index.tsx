@@ -9,9 +9,12 @@ export async function getServerSideProps() {
     props: {
       posts: [
         {
+          id: 1,
           title: "어쩌고",
           description: "으짜고 저짜고",
           img: "https://bit.ly/34GKdB2",
+          like: true,
+          likeNum: 1,
           user: {
             id: 1,
             name: "Teemo",
@@ -20,9 +23,12 @@ export async function getServerSideProps() {
           },
         },
         {
+          id: 2,
           title: "어쩌고",
           description: "으짜고 저짜고",
           img: "https://bit.ly/34GKdB2",
+          like: false,
+          likeNum: 0,
           user: {
             id: 1,
             name: "Teemo",
@@ -31,9 +37,12 @@ export async function getServerSideProps() {
           },
         },
         {
+          id: 3,
           title: "어쩌고",
           description: "으짜고 저짜고",
           img: "https://bit.ly/34GKdB2",
+          like: true,
+          likeNum: 1,
           user: {
             id: 1,
             name: "Teemo",
@@ -42,9 +51,12 @@ export async function getServerSideProps() {
           },
         },
         {
+          id: 4,
           title: "어쩌고",
           description: "으짜고 저짜고",
           img: "https://bit.ly/34GKdB2",
+          like: false,
+          likeNum: 0,
           user: {
             id: 1,
             name: "Teemo",
@@ -53,9 +65,12 @@ export async function getServerSideProps() {
           },
         },
         {
+          id: 5,
           title: "어쩌고",
           description: "으짜고 저짜고",
           img: "https://bit.ly/34GKdB2",
+          like: true,
+          likeNum: 1,
           user: {
             id: 1,
             name: "Teemo",

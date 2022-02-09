@@ -19,11 +19,15 @@ function PostCard({ post }: PostCardProps) {
       <S.Info>
         <S.UserInfo>
           <S.UserImg src="https://bit.ly/35VUeLy" />
-          <h4>{post.user.name}</h4>
+          <h4>{post.user.nickname}</h4>
         </S.UserInfo>
-        <S.LikeInfo>
-          <AiOutlineHeart size="1.5rem" />
-          <S.LikeCounter>0</S.LikeCounter>
+        <S.LikeInfo liked={post.like}>
+          {post.like ? (
+            <AiFillHeart size="1.5rem" />
+          ) : (
+            <AiOutlineHeart size="1.5rem" />
+          )}
+          <S.LikeCounter>{post.likeNum}</S.LikeCounter>
         </S.LikeInfo>
       </S.Info>
     </S.PostCardWrapper>

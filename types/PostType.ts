@@ -4,5 +4,7 @@ export interface PostType {
   title: string;
   description: string;
   img: string;
+  like: boolean;
+  likeNum: number;
   user: UserType;
 }
