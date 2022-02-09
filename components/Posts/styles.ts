@@ -26,9 +26,15 @@ export const PostCardWrapper = styled.div`
   flex-direction: column;
   border-radius: 10px;
   border: 1px solid #e8e8e8;
+  transition: 0.2s;
 
   @media (max-width: 680px) {
     width: 100%;
+  }
+
+  :hover {
+    transform: translateY(-20px);
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.3);
   }
 `;
 
