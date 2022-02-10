@@ -13,13 +13,13 @@ function PostCard({ post }: PostCardProps) {
       <S.Context>
         <div>
           <S.Title>{post.title}</S.Title>
-          <S.Description>{post.description}</S.Description>
+          <S.Description>{post.contents}</S.Description>
         </div>
       </S.Context>
       <S.Info>
         <S.UserInfo>
           <S.UserImg src="https://bit.ly/35VUeLy" />
-          <h4>{post.user.nickname}</h4>
+          <h4>{post.user.id}</h4>
         </S.UserInfo>
         <S.LikeInfo liked={post.like}>
           {post.like ? (

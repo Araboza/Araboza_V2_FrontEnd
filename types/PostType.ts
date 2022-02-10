@@ -2,9 +2,10 @@ import { UserType } from "./UserType";
 
 export interface PostType {
   title: string;
-  description: string;
+  contents: string;
   img: string;
   like: boolean;
   likeNum: number;
   user: UserType;
 }
+ 
