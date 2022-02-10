@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 import Header from "../components/Header";
 import SEO from "../components/SEO";
+import My from "../components/My";
 
 import { UserType } from "../types";
 
@@ -18,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   };
 };
 
-function My({ user }: { user: UserType }) {
+function MyPage({ user }: { user: UserType }) {
   return (
     <div>
       <SEO
@@ -27,8 +28,9 @@ function My({ user }: { user: UserType }) {
         img="https://bit.ly/35VUeLy"
       />
       <Header />
+      <My user={user} />
     </div>
   );
 }
 
-export default My;
+export default MyPage;
