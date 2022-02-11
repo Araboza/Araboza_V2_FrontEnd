@@ -4,12 +4,8 @@ import { PostType, UserType } from "../../types";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 
-interface PostI extends PostType {
-  user: UserType;
-}
-
 interface PostCardProps {
-  post: PostI;
+  post: PostType;
 }
 
 function PostCard({ post }: PostCardProps) {
