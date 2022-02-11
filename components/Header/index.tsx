@@ -9,11 +9,7 @@ import Notice from "../Notice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../modules";
 import { isCloseNotice, isNotice } from "../../modules/notice";
-import {
-  isCloseNavbar,
-  isShowNavbar,
-  isToggleNavbar,
-} from "../../modules/mobileNavbar";
+import { isCloseNavbar, isToggleNavbar } from "../../modules/mobileNavbar";
 import NavbarMobile from "../NavbarMobile";
 
 function Header() {
@@ -44,13 +40,15 @@ function Header() {
           </Link>
           <S.Navbar>
             <Link href="/">
-              <S.NavLink isBottom={router.route === "/"}>Home</S.NavLink>
+              <S.NavLink isBottom={router.asPath === "/"}>Home</S.NavLink>
             </Link>
             <Link href="/upload">
-              <S.NavLink isBottom={router.route === "upload"}>Upload</S.NavLink>
+              <S.NavLink isBottom={router.asPath === "/upload"}>
+                Upload
+              </S.NavLink>
             </Link>
             <Link href="/my">
-              <S.NavLink isBottom={router.route === "my"}>MyPage</S.NavLink>
+              <S.NavLink isBottom={router.asPath === "/my"}>MyPage</S.NavLink>
             </Link>
           </S.Navbar>
           <S.Status>

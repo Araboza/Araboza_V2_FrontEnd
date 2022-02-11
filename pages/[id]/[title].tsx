@@ -1,4 +1,6 @@
 import { GetServerSideProps } from "next";
+import DetailPage from "../../components/DetailPage";
+import Header from "../../components/Header";
 import SEO from "../../components/SEO";
 
 import data from "../../sample/post.json";
@@ -17,11 +19,11 @@ interface DetailProps {
 
 function Detail({ post }: DetailProps) {
   return (
-    <SEO
-      title={post.title}
-      description={post.contents.slice(0, 10)}
-      img={post.img}
-    />
+    <>
+      <SEO title={post.title} img={post.img} />
+      <Header />
+      <DetailPage post={post} />
+    </>
   );
 }
 
