@@ -6,6 +6,4 @@ export interface PostType {
   img: string;
   like: boolean;
   likeNum: number;
-  user: UserType;
 }
- 

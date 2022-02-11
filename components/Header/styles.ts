@@ -76,6 +76,14 @@ export const Status = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 400px) {
+    gap: 10px;
+
+    .github {
+      display: none;
+    }
+  }
 `;
 
 export const NoticePosition = styled.div`

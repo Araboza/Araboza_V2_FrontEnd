@@ -1,9 +1,13 @@
 import * as S from "./styles";
-import { PostType } from "../../types";
+import { PostType, UserType } from "../../types";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
+interface PostI extends PostType {
+  user: UserType;
+}
+
 interface PostCardProps {
-  post: PostType;
+  post: PostI;
 }
 
 function PostCard({ post }: PostCardProps) {

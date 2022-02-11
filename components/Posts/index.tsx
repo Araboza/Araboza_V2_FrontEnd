@@ -1,9 +1,13 @@
 import * as S from "./styles";
-import { PostType } from "../../types";
+import { PostType, UserType } from "../../types";
 import PostCard from "./PostCard";
 
+interface PostI extends PostType {
+  user: UserType;
+}
+
 interface PostsProps {
-  posts: PostType[];
+  posts: PostI[];
 }
 
 function Posts({ posts }: PostsProps) {

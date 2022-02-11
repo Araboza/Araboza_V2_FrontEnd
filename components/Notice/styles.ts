@@ -10,6 +10,10 @@ export const NoticeWrapper = styled.div`
   top: 3.7rem;
   right: 1rem;
   z-index: 100;
+
+  @media (max-width: 400px) {
+    width: 80%;
+  }
 `;
 
 export const Title = styled.h3`
