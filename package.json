@@ -10,7 +10,9 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@types/javascript-time-ago": "^2.0.3",
     "axios": "^0.25.0",
+    "javascript-time-ago": "^2.3.13",
     "next": "12.0.10",
     "next-redux-wrapper": "^7.0.5",
     "react": "17.0.2",
@@ -19,7 +21,11 @@
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
-    "swr": "^1.2.1"
+    "rehype-stringify": "^9.0.3",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "swr": "^1.2.1",
+    "unified": "^10.1.1"
   },
   "devDependencies": {
     "@types/node": "17.0.14",

@@ -6,5 +6,7 @@ export interface PostType {
   img: string;
   like: boolean;
   likeNum: number;
+  tags: Array<string>;
+  createdAt: Date;
   user: UserType;
 }
