@@ -70,9 +70,10 @@ export const Info = styled.div`
   padding: 0 20px;
 `;
 
-export const UserInfo = styled.div`
+export const UserInfo = styled.a`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const UserImg = styled.img`
