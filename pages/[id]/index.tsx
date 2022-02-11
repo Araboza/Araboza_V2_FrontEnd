@@ -1,12 +1,12 @@
 import { GetServerSideProps } from "next";
-import Header from "../components/Header";
-import SEO from "../components/SEO";
-import My from "../components/My";
-import Posts from "../components/Posts";
+import Header from "../../components/Header";
+import SEO from "../../components/SEO";
+import My from "../../components/My";
+import Posts from "../../components/Posts";
 
-import { UserType, PostType } from "../types";
+import { UserType, PostType } from "../../types";
 
-import data from "../sample/post.json";
+import data from "../../sample/posts.json";
 
 interface UserI extends UserType {
   posts: PostType[];
