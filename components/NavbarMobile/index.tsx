@@ -10,32 +10,26 @@ function NavbarMobile() {
 
   return (
     <>
-      <S.NavbarMobileWrapper>
+      <S.NavbarMobileWrapper onClick={() => dispatch(isCloseNavbar())}>
         <Link href="/">
-          <a onClick={() => dispatch(isCloseNavbar())}>
+          <a>
             <S.Item bold={router.asPath === "/"}>Home</S.Item>
           </a>
         </Link>
         <Link href="/upload">
-          <a onClick={() => dispatch(isCloseNavbar())}>
+          <a>
             <S.Item bold={router.asPath === "/upload"}>Upload</S.Item>
           </a>
         </Link>
         <Link href="/my">
-          <a onClick={() => dispatch(isCloseNavbar())}>
+          <a>
             <S.Item bold={router.asPath === "/my"}>MyPage</S.Item>
           </a>
         </Link>
-        <S.Item className="end">
-          <a
-            href="https://github.com/Araboza"
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => dispatch(isCloseNavbar())}
-          >
-            github
-          </a>
-        </S.Item>
+        <a href="https://github.com/Araboza" target="_blank" rel="noreferrer">
+          <S.Item>Github</S.Item>
+        </a>
+        <S.Item className="end">Logout</S.Item>
       </S.NavbarMobileWrapper>
       <S.Background onClick={() => dispatch(isCloseNavbar())} />
     </>

@@ -10,7 +10,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   return {
     props: {
       user: {
-        id: "asd",
+        id: params?.id,
         introduce: "티모를 좋아하는 개발자 으짜고 저짜고",
         img: "https://bit.ly/35VUeLy",
         major: ["FE", "BE", "AWS"],

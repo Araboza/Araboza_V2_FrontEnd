@@ -1,4 +1,23 @@
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
+
+const opacity = keyframes`
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
+`;
+
+const sliding = keyframes`
+  to {
+    top: 4rem;
+  }
+  from {
+    top: -4rem;
+  }
+`;
 
 export const NavbarMobileWrapper = styled.ul`
   position: fixed;
@@ -6,12 +25,15 @@ export const NavbarMobileWrapper = styled.ul`
   left: 0;
   background: #fff;
   width: 100%;
-  z-index: 100;
+  z-index: 80;
   margin: 0;
   list-style: none;
   padding: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  animation-name: ${sliding};
+  animation-duration: 0.2s;
 `;
 
 export const Item = styled.li`
@@ -36,4 +58,7 @@ export const Background = styled.div`
   top: 0;
   left: 0;
   z-index: 50;
+
+  animation-name: ${opacity};
+  animation-duration: 0.2s;
 `;
