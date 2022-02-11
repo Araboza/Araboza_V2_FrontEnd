@@ -9,16 +9,23 @@ import Notice from "../Notice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../modules";
 import { isCloseNotice, isNotice } from "../../modules/notice";
+import {
+  isCloseNavbar,
+  isShowNavbar,
+  isToggleNavbar,
+} from "../../modules/mobileNavbar";
 import NavbarMobile from "../NavbarMobile";
 
 function Header() {
-  const { showNotice } = useSelector((state: RootState) => ({
+  const { showNotice, showNavbar } = useSelector((state: RootState) => ({
     showNotice: state.notice.showNotice,
+    showNavbar: state.mobileNavbar,
   }));
   const dispatch = useDispatch();
   const router = useRouter();
 
   const onClick = () => {
+    dispatch(isCloseNavbar());
     if (showNotice) {
       dispatch(isCloseNotice());
       return;
@@ -31,7 +38,7 @@ function Header() {
       <S.HeaderWrapper>
         <S.HeaderSize>
           <Link href="/">
-            <S.Logo>
+            <S.Logo onClick={() => dispatch(isCloseNavbar())}>
               <SVG.Logo />
             </S.Logo>
           </Link>
@@ -40,9 +47,7 @@ function Header() {
               <S.NavLink isBottom={router.route === "/"}>Home</S.NavLink>
             </Link>
             <Link href="/upload">
-              <S.NavLink isBottom={router.route === "/upload"}>
-                Upload
-              </S.NavLink>
+              <S.NavLink isBottom={router.route === "upload"}>Upload</S.NavLink>
             </Link>
             <Link href="/my">
               <S.NavLink isBottom={router.route === "my"}>MyPage</S.NavLink>
@@ -59,12 +64,18 @@ function Header() {
             >
               <BsGithub size="1.7rem" />
             </S.CircleBackground>
-            <S.UserImg src="https://bit.ly/3sivFA3" />
+            <S.UserImg
+              onClick={() => {
+                if (document.documentElement.clientWidth <= 680)
+                  dispatch(isToggleNavbar());
+              }}
+              src="https://bit.ly/3sivFA3"
+            />
           </S.Status>
           {showNotice && <Notice />}
         </S.HeaderSize>
       </S.HeaderWrapper>
-      <NavbarMobile />
+      {showNavbar && <NavbarMobile />}
     </>
   );
 }

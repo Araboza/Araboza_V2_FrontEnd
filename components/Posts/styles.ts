@@ -32,9 +32,11 @@ export const PostCardWrapper = styled.div`
     width: 100%;
   }
 
-  :hover {
-    transform: translateY(-20px);
-    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.3);
+  @media (min-width: 680px) {
+    :hover {
+      transform: translateY(-20px);
+      box-shadow: 0 20px 10px rgba(0, 0, 0, 0.3);
+    }
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const NavbarMobileWrapper = styled.ul`
-  position: absolute;
+  position: fixed;
   top: 4rem;
   left: 0;
   background: #fff;
@@ -17,6 +17,8 @@ export const NavbarMobileWrapper = styled.ul`
 export const Item = styled.li`
   padding: 10px 0 10px 3rem;
 
+  ${(props: { bold?: boolean }) => props.bold && "font-weight: bold;"}
+
   :active {
     background: #e9e9e9;
   }
@@ -30,7 +32,7 @@ export const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 50;
