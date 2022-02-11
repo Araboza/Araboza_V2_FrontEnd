@@ -18,11 +18,11 @@ function My({ user }: MyType) {
           <div>
             <S.UsreId>{user.id}</S.UsreId>
             <S.UserIntroduce>{user.introduce}</S.UserIntroduce>
-            <div>
+            <S.UserMajors>
               {user.major.map((major) => (
-                <S.UserMajor key={major}>{major}</S.UserMajor>
+                <S.UserMajor key={major}>#{major}</S.UserMajor>
               ))}
-            </div>
+            </S.UserMajors>
           </div>
         </S.Contents>
         {/* user를 확인해서 띄울지 안 띄울지 정해야 함 */}

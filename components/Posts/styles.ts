@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const PostsWrapper = styled.div`
   width: 1310px;
-  margin: 6rem auto 0;
+  margin: 6rem auto 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

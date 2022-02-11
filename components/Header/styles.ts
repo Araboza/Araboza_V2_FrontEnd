@@ -43,6 +43,10 @@ export const Navbar = styled.nav`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (max-width: 680px) {
+    display: none;
+  }
 `;
 
 export const NavLink = styled.a`
