@@ -1,7 +1,4 @@
-import unified from "unified";
-import markdown from "remark-parse";
 import Ta from "javascript-time-ago";
-
 import ko from "javascript-time-ago/locale/ko.json";
 
 import * as S from "./styles";

@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Header from "../components/Header";
 import Posts from "../components/Posts";
 import SEO from "../components/SEO";
+
 import { PostType } from "../types";
 
 import data from "../sample/posts.json";

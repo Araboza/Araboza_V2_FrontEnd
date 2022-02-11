@@ -2,14 +2,18 @@ import { GetServerSideProps } from "next";
 import DetailPage from "../../components/DetailPage";
 import Header from "../../components/Header";
 import SEO from "../../components/SEO";
+import { serialize } from "next-mdx-remote/serialize";
 
-import data from "../../sample/post.json";
+import post from "../../sample/post.json";
 import { PostType } from "../../types";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   console.log(context.params?.id, context.params?.title); // api 요청
+
+  const mdxSource = await serialize(post.contents);
+
   return {
-    props: { post: data },
+    props: { post, source: mdxSource },
   };
 };
 
