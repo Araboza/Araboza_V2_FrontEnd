@@ -3,6 +3,7 @@ import DetailPage from "../../components/DetailPage";
 import Header from "../../components/Header";
 import SEO from "../../components/SEO";
 import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import post from "../../sample/post.json";
 import { PostType } from "../../types";
@@ -19,14 +20,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 interface DetailProps {
   post: PostType;
+  source: MDXRemoteSerializeResult;
 }
 
-function Detail({ post }: DetailProps) {
+function Detail({ post, source }: DetailProps) {
   return (
     <>
       <SEO title={post.title} img={post.img} />
       <Header />
-      <DetailPage post={post} />
+      <DetailPage post={post} source={source} />
     </>
   );
 }

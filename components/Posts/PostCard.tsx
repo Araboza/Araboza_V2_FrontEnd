@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/link-passhref */
 import * as S from "./styles";
-import { PostType, UserType } from "../../types";
+import { PostType } from "../../types";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 

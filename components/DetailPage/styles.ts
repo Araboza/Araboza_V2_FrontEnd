@@ -34,3 +34,69 @@ export const CoverImg = styled.img`
   margin: 0 auto;
   display: block;
 `;
+
+export const Contents = styled.div`
+  padding: 20px 0 100px;
+`;
+
+export const UserInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #ecf2f0;
+  border-radius: 10px;
+  margin-bottom: 50px;
+`;
+
+export const UserInformation = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+export const UserImg = styled.img`
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+`;
+
+export const UserName = styled.h2`
+  margin: 0;
+`;
+
+export const UserIntroduce = styled.p`
+  margin: 0;
+`;
+
+export const Like = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  svg {
+    color: red;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const BackButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  gap: 5px;
+  cursor: pointer;
+
+  :hover {
+  }
+`;
