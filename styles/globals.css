@@ -26,3 +26,14 @@ a {
 :root {
   --vh: 100%;
 }
+
+.ql-editor {
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: normal;
+}
+
+.ql-editor {
+  max-height: 65vh;
+  min-height: 65vh;
+}

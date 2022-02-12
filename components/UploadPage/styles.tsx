@@ -27,6 +27,7 @@ export const TagWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 `;
 
 export const TagInput = styled.input`
@@ -35,4 +36,28 @@ export const TagInput = styled.input`
   border: none;
   font-size: 1rem;
   text-align: center;
+`;
+
+export const Footer = styled.div`
+  text-align: right;
+`;
+
+export const SubmitButton = styled.button`
+  border: none;
+  font-size: 1.3rem;
+  font-family: inherit;
+  outline: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+
+  :hover {
+    background: #444444;
+    color: #fff;
+  }
+  :not(:hover) {
+    transition: 0s;
+  }
 `;
