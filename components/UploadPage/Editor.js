@@ -1,13 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import MarkdownShortcuts from "quill-markdown-shortcuts";
 
 import "react-quill/dist/quill.bubble.css";
-
-interface EditorProps {
-  value: string;
-  onChange: Dispatch<SetStateAction<string>>;
-}
 
 Quill.register("modules/markdownShortcuts", MarkdownShortcuts);
 
@@ -42,7 +36,7 @@ const formats = [
   "background",
 ];
 
-function Editor({ value, onChange }: EditorProps) {
+function Editor({ value, onChange }) {
   return (
     <ReactQuill
       value={value}
