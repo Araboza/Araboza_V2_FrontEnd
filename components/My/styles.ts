@@ -164,6 +164,26 @@ export const TagInput = styled.input`
   font-family: inherit;
 `;
 
+export const SubmitWrapper = styled.div`
+  display: flex;
+  justify-content: right;
+`;
+
+export const SubmitButton = styled.button`
+  font-family: inherit;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 1s;
+
+  :hover {
+    background: #b2bec3;
+  }
+`;
+
 export const Background = styled.div`
   width: 100%;
   height: 100vh;

@@ -15,6 +15,9 @@ function Popup() {
           <S.Tag># FE</S.Tag>
           <S.TagInput placeholder="전공 입력 (10개 이내)" />
         </S.Tags>
+        <S.SubmitWrapper>
+          <S.SubmitButton>변경</S.SubmitButton>
+        </S.SubmitWrapper>
       </S.PopupWrapper>
       <S.Background />
     </>
