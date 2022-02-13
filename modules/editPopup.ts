@@ -1,5 +1,5 @@
-const IS_SHOWPOPUP = "IS_SHOWPOPUP/editPopup";
-const IS_CLOSEPOPUP = "IS_CLOSEPOPUP/editPopup";
+const IS_SHOWPOPUP = "IS_SHOWPOPUP/editPopup" as const;
+const IS_CLOSEPOPUP = "IS_CLOSEPOPUP/editPopup" as const;
 
 export const isShowPopup = () => ({
   type: IS_SHOWPOPUP,
@@ -25,7 +25,7 @@ export default function editPopup(
       if (!state) return true;
       return state;
     case IS_CLOSEPOPUP:
-      if (state) return true;
+      if (state) return false;
       return state;
     default:
       return state;

@@ -1,4 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import { useDispatch } from "react-redux";
+import { isClosePopup } from "../../modules/editPopup";
 import { IoClose } from "react-icons/io5";
 import produce from "immer";
 
@@ -12,6 +14,7 @@ interface valueType {
 }
 
 function Popup() {
+  const dispatch = useDispatch();
   const [value, setValue] = useState<valueType>({
     id: "",
     introduce: "",
@@ -47,11 +50,15 @@ function Popup() {
     );
   };
 
+  const onClick = () => {
+    dispatch(isClosePopup());
+  };
+
   return (
     <>
       <S.PopupWrapper>
         <S.CloseWrapper>
-          <IoClose size="2rem" />
+          <IoClose onClick={() => dispatch(isClosePopup())} size="2rem" />
         </S.CloseWrapper>
         <S.Input
           onChange={onChange}
@@ -80,10 +87,10 @@ function Popup() {
           )}
         </S.Tags>
         <S.SubmitWrapper>
-          <S.SubmitButton>변경</S.SubmitButton>
+          <S.SubmitButton onClick={onClick}>변경</S.SubmitButton>
         </S.SubmitWrapper>
       </S.PopupWrapper>
-      <S.Background />
+      <S.Background onClick={() => dispatch(isClosePopup())} />
     </>
   );
 }

@@ -1,4 +1,5 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../modules";
 import { isShowPopup } from "../../modules/editPopup";
 import { UserType } from "../../types";
 import Popup from "./Popup";
@@ -9,6 +10,9 @@ interface MyType {
 }
 
 function My({ user }: MyType) {
+  const { editPopup } = useSelector((state: RootState) => ({
+    editPopup: state.editPopup,
+  }));
   const dispatch = useDispatch();
 
   return (
@@ -33,7 +37,7 @@ function My({ user }: MyType) {
           </S.EditButton>
         </S.Introduce>
       </S.MyWrapper>
-      <Popup />
+      {editPopup && <Popup />}
     </>
   );
 }
