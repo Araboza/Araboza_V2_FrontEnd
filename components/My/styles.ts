@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 
 export const MyWrapper = styled.div`
   width: 1310px;
@@ -94,4 +95,83 @@ export const EditButton = styled.button`
   @media (max-width: 680px) {
     margin-top: 20px;
   }
+`;
+
+// Popup.tsx
+
+const opacity = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const PopupWrapper = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background: #fff;
+  z-index: 100;
+  padding: 20px;
+  border-radius: 20px;
+  animation-name: ${opacity};
+  animation-duration: 0.2s;
+`;
+
+export const CloseWrapper = styled.div`
+  display: flex;
+  justify-content: right;
+  margin-bottom: 1rem;
+
+  svg {
+    cursor: pointer;
+  }
+`;
+
+export const Input = styled.input`
+  outline: none;
+  width: 100%;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #dfe6e9;
+  padding: 7px 20px;
+  border-radius: 30px;
+  font-family: inherit;
+  margin-bottom: 20px;
+`;
+
+export const Tags = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+`;
+
+export const Tag = styled.span`
+  font-size: 1rem;
+  font-family: inherit;
+  margin-right: 10px;
+`;
+
+export const TagInput = styled.input`
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+`;
+
+export const Background = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+
+  animation-name: ${opacity};
+  animation-duration: 0.2s;
 `;
