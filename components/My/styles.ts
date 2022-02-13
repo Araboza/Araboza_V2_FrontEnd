@@ -136,7 +136,7 @@ export const Input = styled.input`
   outline: none;
   width: 100%;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   background: #dfe6e9;
   padding: 7px 20px;
@@ -145,16 +145,19 @@ export const Input = styled.input`
   margin-bottom: 20px;
 `;
 
-export const Tags = styled.div`
+export const Tags = styled.form`
   display: flex;
   justify-content: center;
   padding: 20px 0;
+  max-width: 100%;
+  flex-wrap: wrap;
 `;
 
 export const Tag = styled.span`
   font-size: 1rem;
   font-family: inherit;
   margin-right: 10px;
+  cursor: pointer;
 `;
 
 export const TagInput = styled.input`
