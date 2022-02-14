@@ -22,7 +22,10 @@ function UploadPage() {
     e.preventDefault();
     setTag(
       produce(tag, (draft) => {
-        draft.tags.push(draft.tagValue);
+        const value = draft.tagValue.replaceAll(" ", "");
+        if (draft.tags.findIndex((i) => i === value) !== -1 || value === "")
+          return;
+        draft.tags.push(value);
         draft.tagValue = "";
       })
     );
@@ -35,6 +38,7 @@ function UploadPage() {
           ...tag,
           tagValue: e.target.value,
         });
+        break;
 
       case "title":
         setTitle(e.target.value);
@@ -54,6 +58,11 @@ function UploadPage() {
         placeholder="제목을 입력하세요"
       />
       <S.TagWrapper onSubmit={onSubmit}>
+        <S.Tags>
+          {tag.tags.map((tag) => (
+            <S.Tag key={tag}># {tag}</S.Tag>
+          ))}
+        </S.Tags>
         <S.TagInput
           id="tag"
           value={tag.tagValue}
