@@ -7,11 +7,12 @@ import { PostType } from "../types";
 
 import data from "../sample/posts.json";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     props: {
       posts: data,
     },
+    revalidate: 60,
   };
 }
 
