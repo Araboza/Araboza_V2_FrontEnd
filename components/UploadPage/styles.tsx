@@ -23,7 +23,7 @@ export const TitleInput = styled.input`
   }
 `;
 
-export const TagWrapper = styled.div`
+export const TagWrapper = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
