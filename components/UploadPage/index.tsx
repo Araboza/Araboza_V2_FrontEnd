@@ -1,7 +1,9 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
+import { ToastContainer, toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 import * as S from "./styles";
 import produce from "immer";
 
@@ -46,7 +48,27 @@ function UploadPage() {
   };
 
   const onClick = () => {
-    router.push("/");
+    if (!title.replaceAll(" ", ""))
+      toast.error("제목을 입력해주세요!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: false,
+        progress: undefined,
+      });
+    else if (!value.replaceAll(" ", ""))
+      toast.error("내용을 입력해주세요!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: false,
+        progress: undefined,
+      });
+    else router.push("/");
   };
 
   return (
@@ -74,6 +96,7 @@ function UploadPage() {
       <S.Footer>
         <S.SubmitButton onClick={onClick}>올리기</S.SubmitButton>
       </S.Footer>
+      <ToastContainer />
     </S.UploadWrapper>
   );
 }
