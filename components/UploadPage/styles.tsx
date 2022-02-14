@@ -30,8 +30,6 @@ export const TagWrapper = styled.form`
   margin-bottom: 10px;
 `;
 
-export const Tags = styled.div``;
-
 export const Tag = styled.span`
   margin-right: 10px;
 `;
