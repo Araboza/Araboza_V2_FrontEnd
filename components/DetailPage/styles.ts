@@ -49,10 +49,11 @@ export const UserInfo = styled.div`
   margin-bottom: 50px;
 `;
 
-export const UserInformation = styled.div`
+export const UserInformation = styled.a`
   display: flex;
   align-items: center;
   gap: 20px;
+  cursor: pointer;
 `;
 
 export const UserImg = styled.img`

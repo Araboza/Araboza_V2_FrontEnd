@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { AiFillHome } from "react-icons/ai";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
@@ -37,17 +38,15 @@ function DetailPage({ post, source }: DetailPageProps) {
         <MDXRemote {...source} />
       </S.Contents>
       <S.UserInfo>
-        <S.UserInformation>
-          <S.UserImg src={post.user.img} />
-          <div>
-            <Link href={`/${post.user.id}`}>
-              <a>
-                <S.UserName>{post.user.id}</S.UserName>
-                <S.UserIntroduce>{post.user.introduce}</S.UserIntroduce>
-              </a>
-            </Link>
-          </div>
-        </S.UserInformation>
+        <Link href={`/${post.user.id}`}>
+          <S.UserInformation>
+            <S.UserImg src={post.user.img} />
+            <div>
+              <S.UserName>{post.user.id}</S.UserName>
+              <S.UserIntroduce>{post.user.introduce}</S.UserIntroduce>
+            </div>
+          </S.UserInformation>
+        </Link>
         <S.Like>
           {post.like ? <AiFillHeart /> : <AiOutlineHeart />}
           <span>{post.likeNum}</span>

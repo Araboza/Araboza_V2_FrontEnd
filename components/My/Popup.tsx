@@ -54,6 +54,9 @@ function Popup() {
   };
 
   const onClick = async () => {
+    console.log(!value.id.replaceAll(" ", ""));
+    console.log(!value.introduce.replaceAll(" ", ""));
+    console.log(!value.major[0]);
     if (!value.id.replaceAll(" ", "")) {
       alert("id를 입력해주세요!");
       return;
