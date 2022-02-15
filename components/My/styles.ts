@@ -113,7 +113,8 @@ export const PopupWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
+  min-width: 300px;
+  max-width: 50%;
   background: #fff;
   z-index: 100;
   padding: 20px;
