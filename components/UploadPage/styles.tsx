@@ -4,6 +4,9 @@ export const UploadWrapper = styled.div`
   max-width: 80rem;
   width: 80%;
   margin: 6rem auto 10px;
+  display: flex;
+  height: 86vh;
+  flex-direction: column;
 `;
 
 export const TitleInput = styled.input`
@@ -11,7 +14,7 @@ export const TitleInput = styled.input`
   border: none;
   outline: none;
   margin: 1rem 0;
-  padding: 0 10px;
+  padding: 0 10px 5px;
   width: 100%;
   font-family: inherit;
   font-weight: bold;
@@ -32,6 +35,10 @@ export const TagWrapper = styled.form`
 
 export const Tag = styled.span`
   margin-right: 10px;
+  font-size: 0.9rem;
+  background: #ecf0f1;
+  padding: 0 10px;
+  border-radius: 20px;
 `;
 
 export const TagInput = styled.input`

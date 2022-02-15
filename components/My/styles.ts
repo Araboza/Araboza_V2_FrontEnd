@@ -166,6 +166,8 @@ export const TagInput = styled.input`
   border: none;
   font-size: 1rem;
   font-family: inherit;
+  width: 100%;
+  margin-top: 10px;
 `;
 
 export const SubmitWrapper = styled.div`

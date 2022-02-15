@@ -27,13 +27,19 @@ a {
   --vh: 100%;
 }
 
+.quill {
+  flex-grow: 1;
+  overflow: auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
 .ql-editor {
   font-size: 1rem;
   font-family: inherit;
   font-weight: normal;
-  max-height: 65vh;
-  min-height: 65vh;
-  margin-bottom: 10px;
 }
 
 ::-webkit-scrollbar {

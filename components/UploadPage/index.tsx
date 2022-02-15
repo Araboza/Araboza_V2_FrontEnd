@@ -1,12 +1,12 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { alert } from "../../lib/alert";
+import produce from "immer";
 
 import "react-toastify/dist/ReactToastify.css";
 import * as S from "./styles";
-import produce from "immer";
 
 const ReactQuill = dynamic(() => import("./Editor"), { ssr: false });
 
@@ -48,6 +48,14 @@ function UploadPage() {
     }
   };
 
+  const RemoveTag = (tagName: string) => {
+    setTag(
+      produce(tag, (draft) => {
+        draft.tags = draft.tags.filter((i) => i !== tagName);
+      })
+    );
+  };
+
   const onClick = () => {
     if (!title.replaceAll(" ", "")) alert("제목을 입력해주세요!");
     else if (!value.replaceAll(" ", "")) alert("내용을 입력해주세요!");
@@ -56,25 +64,31 @@ function UploadPage() {
 
   return (
     <S.UploadWrapper>
-      <S.TitleInput
-        id="title"
-        value={title}
-        onChange={onChange}
-        placeholder="제목을 입력하세요"
-      />
-      <S.TagWrapper onSubmit={onSubmit}>
-        <div>
-          {tag.tags.map((tag) => (
-            <S.Tag key={tag}># {tag}</S.Tag>
-          ))}
-        </div>
-        <S.TagInput
-          id="tag"
-          value={tag.tagValue}
+      <div>
+        <S.TitleInput
+          id="title"
+          value={title}
           onChange={onChange}
-          placeholder="태그 입력"
+          placeholder="제목을 입력하세요"
         />
-      </S.TagWrapper>
+        <S.TagWrapper onSubmit={onSubmit}>
+          <div>
+            {tag.tags.map((tag) => (
+              <S.Tag key={tag} onDoubleClick={() => RemoveTag(tag)}>
+                # {tag}
+              </S.Tag>
+            ))}
+          </div>
+          {tag.tags.length < 10 && (
+            <S.TagInput
+              id="tag"
+              value={tag.tagValue}
+              onChange={onChange}
+              placeholder="태그 입력"
+            />
+          )}
+        </S.TagWrapper>
+      </div>
       <ReactQuill value={value} onChange={setValue} />
       <S.Footer>
         <S.SubmitButton onClick={onClick}>올리기</S.SubmitButton>
