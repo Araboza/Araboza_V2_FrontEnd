@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { isClosePopup } from "../../modules/editPopup";
 import { IoClose } from "react-icons/io5";
 import produce from "immer";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { alert } from "../../lib/alert";
 import "react-toastify/dist/ReactToastify.css";
 
 import * as S from "./styles";
@@ -54,41 +55,17 @@ function Popup() {
 
   const onClick = async () => {
     if (!value.id.replaceAll(" ", "")) {
-      toast.error("id를 입력해주세요!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        draggable: true,
-        pauseOnHover: false,
-        progress: undefined,
-      });
+      alert("id를 입력해주세요!");
       return;
     }
     if (!value.introduce.replaceAll(" ", "")) {
-      toast.error("소개 문구를 입력해주세요!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        draggable: true,
-        pauseOnHover: false,
-        progress: undefined,
-      });
+      alert("소개 문구를 입력해주세요!");
       return;
     }
     // 유효 id 확인 요청
     if (!value.major[0]) {
       // 유효 id 확인 조건식
-      toast.error("존재하는 id입니다", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        draggable: true,
-        pauseOnHover: false,
-        progress: undefined,
-      });
+      alert("존재하는 id입니다");
       return;
     }
 

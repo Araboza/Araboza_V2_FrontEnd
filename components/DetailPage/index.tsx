@@ -49,7 +49,7 @@ function DetailPage({ post, source }: DetailPageProps) {
           </div>
         </S.UserInformation>
         <S.Like>
-          <AiFillHeart />
+          {post.like ? <AiFillHeart /> : <AiOutlineHeart />}
           <span>{post.likeNum}</span>
         </S.Like>
       </S.UserInfo>
