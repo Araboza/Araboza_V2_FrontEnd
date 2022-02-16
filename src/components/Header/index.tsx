@@ -66,6 +66,7 @@ function Header() {
               onClick={() => {
                 if (document.documentElement.clientWidth <= 680)
                   dispatch(isToggleNavbar());
+                else router.push("/login");
               }}
               src="https://bit.ly/3sivFA3"
             />

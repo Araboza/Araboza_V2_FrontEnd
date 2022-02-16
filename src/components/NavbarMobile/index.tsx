@@ -29,6 +29,11 @@ function NavbarMobile() {
         <a href="https://github.com/Araboza" target="_blank" rel="noreferrer">
           <S.Item>Github</S.Item>
         </a>
+        <Link href="/login">
+          <a>
+            <S.Item>Login</S.Item>
+          </a>
+        </Link>
         <S.Item className="end">Logout</S.Item>
       </S.NavbarMobileWrapper>
       <S.Background onClick={() => dispatch(isCloseNavbar())} />
