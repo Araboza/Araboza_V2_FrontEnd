@@ -20,23 +20,35 @@ export const LoginForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+
+  @media (max-width: 35rem) {
+    width: 90%;
+  }
+
+  @media (max-height: 40rem) {
+    height: 90vh;
+  }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.a`
   height: 6rem;
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  width: 100%;
+  cursor: pointer;
 `;
 
 export const Inputs = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 `;
 
 export const InputWrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const SvgWrapper = styled.div`
@@ -55,7 +67,7 @@ export const SvgWrapper = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 31rem;
+  width: 100%;
   outline: none;
   border: 2px solid #afafaf;
   font-size: 1rem;
@@ -66,6 +78,14 @@ export const Input = styled.input`
   ::placeholder {
     color: #aaaa;
   }
+`;
+
+export const ChangeType = styled.a`
+  display: flex;
+  justify-content: right;
+  padding: 0 20px;
+  cursor: pointer;
+  font-size: 1rem;
 `;
 
 export const SubmitButton = styled.button`

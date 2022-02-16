@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/link-passhref */
 import * as S from "./styles";
 import * as SVG from "../../SVG";
 import { BiUser, BiLockAlt, BiLock } from "react-icons/bi";
+import Link from "next/link";
 
 interface LoginPageProps {
   type: "sign in" | "sign up";
@@ -10,9 +12,11 @@ function LoginPage({ type }: LoginPageProps) {
   return (
     <S.LoginPageWrapper>
       <S.LoginForm>
-        <S.Logo>
-          <SVG.Logo />
-        </S.Logo>
+        <Link href="/">
+          <S.Logo>
+            <SVG.Logo />
+          </S.Logo>
+        </Link>
         <S.Inputs>
           <S.InputWrapper>
             <S.SvgWrapper>
@@ -35,6 +39,11 @@ function LoginPage({ type }: LoginPageProps) {
               <S.Input placeholder="Confirm Password" type="password" />
             </S.InputWrapper>
           )}
+          <Link href={`/${type === "sign in" ? "register" : "login"}`}>
+            <S.ChangeType>
+              {type === "sign in" ? "sign up" : "sign in"}
+            </S.ChangeType>
+          </Link>
         </S.Inputs>
         <S.SubmitButton>{type.toUpperCase()}</S.SubmitButton>
       </S.LoginForm>
